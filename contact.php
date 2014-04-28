@@ -1,5 +1,6 @@
 <?php
 $pageTitle = "Contact Ola";
+$section = "contact";
 include('includes/header.php'); ?>
 
   <div class="section page">
