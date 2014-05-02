@@ -1,45 +1,8 @@
 <?php
-
-$products = array();
-
-$products[106] = array(
-  "name" => "Logo Shirt, Red",
-  "price" => 20,
-  "img" => "img/shirts/shirt-106.jpg"
-);
-
-$products[107] = array(
-  "name" => "Mike the Frog Shirt, Black",
-  "price" => 20,
-  "img" => "img/shirts/shirt-107.jpg"
-);
-
-$products[108] = array(
-  "name" => "Mike the Frog Shirt, Blue",
-  "price" => 20,
-  "img" => "img/shirts/shirt-108.jpg"
-);
-
-$products[101] = array(
-  "name" => "Logo Shirt, Red",
-  "price" => 20,
-  "img" => "img/shirts/shirt-101.jpg"
-);
-
-$products[102] = array(
-  "name" => "Mike the Frog Shirt, Black",
-  "price" => 20,
-  "img" => "img/shirts/shirt-102.jpg"
-);
-
-$products[103] = array(
-  "name" => "Mike the Frog Shirt, Blue",
-  "price" => 20,
-  "img" => "img/shirts/shirt-103.jpg"
-);
-
-
+include('includes/products.php');
 ?>
+
+
 <?php
 $pageTitle = "Shirts";
 $section = "shirts";
@@ -51,10 +14,10 @@ include('includes/header.php'); ?>
 
         <ul class="products">
 
-            <?php foreach ($products as $product) {
+            <?php foreach ($products as $product_id => $product) {
 
                 echo "<li>";
-                echo '<a href="#">';
+                echo '<a href="shirt.php?id=' . $product_id . '">';
                 echo '<img src="' . $product["img"] . '", alt="' . $product["name"] . '">';
                 echo "<p>View details.</p>";
                 echo "</a>";
