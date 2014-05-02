@@ -16,12 +16,7 @@ include('includes/header.php'); ?>
 
             <?php foreach ($products as $product_id => $product) {
 
-                echo "<li>";
-                echo '<a href="shirt.php?id=' . $product_id . '">';
-                echo '<img src="' . $product["img"] . '", alt="' . $product["name"] . '">';
-                echo "<p>View details.</p>";
-                echo "</a>";
-                echo "</li>";
+                echo productListView($product, $product_id);
 
          } ?>
         </ul>

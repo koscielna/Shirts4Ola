@@ -1,5 +1,16 @@
 <?php
 
+function productListView($product, $product_id) {
+    $output = "<li>";
+    $output = $output . '<a href="shirt.php?id=' . $product_id . '">';
+    $output = $output . '<img src="' . $product["img"] . '" alt="' . $product["name"] . '">';
+    $output = $output . "<p>View details.</p>";
+    $output = $output . "</a>";
+    $output = $output . "</li>";
+
+    return $output;
+}
+
 $products = array();
 
 $products[106] = array(
@@ -37,6 +48,5 @@ $products[103] = array(
   "price" => 20,
   "img" => "img/shirts/shirt-103.jpg"
 );
-
 
 ?>

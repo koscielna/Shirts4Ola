@@ -1,8 +1,16 @@
 <?php
 include('includes/products.php');
 
-$product_id = $_GET["id"];
-$product = $products[$product_id];
+if (isset($_GET)) {
+  $product_id = $_GET["id"];
+  if (isset($products[$product_id])) {
+   $product = $products[$product_id];
+  }
+}
+
+if (!isset($product)) {
+    header("Location: shirts.php");
+}
 
 $section = "shirts";
 $pageTitle = $product["name"];

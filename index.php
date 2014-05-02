@@ -1,6 +1,7 @@
 <?php
 $pageTitle = "Home Page";
-include('includes/header.php'); ?>
+include('includes/header.php');
+include('includes/products.php'); ?>
 
 		<div class="section banner">
 
@@ -24,26 +25,17 @@ include('includes/header.php'); ?>
 				<h2>Mike&rsquo;s Latest Shirts</h2>
 
 				<ul class="products">
-					<li><a href="#">
-							<img src="img/shirts/shirt-108.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-107.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-106.jpg">
-							<p>View Details</p>
-						</a>
-					</li><li>
-						<a href="#">
-							<img src="img/shirts/shirt-105.jpg">
-							<p>View Details</p>
-						</a>
-					</li>
+						<?php
+
+							$pos = 0;
+
+							foreach ($products as $product_id => $product) {
+								if ($pos > (count($products) - 5)) {
+									echo productListView($product, $product_id);
+								}
+
+								$pos = $pos + 1;
+						} ?>
 				</ul>
 
 			</div>
